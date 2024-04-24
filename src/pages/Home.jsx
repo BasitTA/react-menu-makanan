@@ -3,6 +3,8 @@ import MenuCard from '../components/ui/MenuCard'
 import './Home.css'
 
 const Home = ()=>{
+
+
    return(
       <div className='size-full bg-gradient-to-b from-orange-500 to-orange-700'>
          <div className='grid grid-cols-5 size-full my-0'>
@@ -34,25 +36,12 @@ const Home = ()=>{
                   {/* food menu */}
                   <div id='makanan' className='overflow-auto col-span-2 md:col-span-1 bg-stone-900 text-white size-full p-2'>
                      <h4>Makanan</h4>
-                     <MenuCard/>
-                     <MenuCard/>
-                     <MenuCard/>
-                     <MenuCard/>
-                     <MenuCard/>
-                     <MenuCard/>
-                     <MenuCard/>
-                     <MenuCard/>
+                     <MenuCard type='food'/>
                   </div>
                   {/* drink menu */}
                   <div id='minuman' className='overflow-auto col-span-2 md:col-span-1 bg-orange-600 text-white size-full p-2'>
                      <h4>Minuman</h4>
-                     <MenuCard/>
-                     <MenuCard/>
-                     <MenuCard/>
-                     <MenuCard/>
-                     <MenuCard/>
-                     <MenuCard/>
-                     <MenuCard/>
+                     <MenuCard type='drink'/>
                   </div>
                </div>
             </div>
