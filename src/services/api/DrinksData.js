@@ -1,11 +1,4 @@
-import DetailMenuCard from "./DetailMenuCard"
-import { useEffect, useState } from "react"
-
-const MenuCard = (props)=>{
-   const { type, filterName } = props
-   const beefURL = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=beef'
-   const seafoodURL = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=seafood'
-   const dessertURL = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=dessert'
+const DrinksData = ()=>{
    const drinks = [
       {
          "idMeal": "1",
@@ -58,47 +51,6 @@ const MenuCard = (props)=>{
          "strMealThumb": "https://images.pexels.com/photos/9228428/pexels-photo-9228428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
        }
    ]
-
-   const [menus, setMenus] = useState([])
-
-
-   useEffect(()=>{
-      // fetching data from API
-      const fetchData = async ()=>{
-         const dataBeef = await fetch(beefURL)
-         const dataSeafood = await fetch(seafoodURL)
-         const dataDessert = await fetch(dessertURL)
-
-         const dataBeefJSON = await dataBeef.json()
-         const dataSeafoodJSON = await dataSeafood.json()
-         const dataDessertJSON = await dataDessert.json()
-
-         const dataMenuAll = [...dataBeefJSON.meals, ...dataSeafoodJSON.meals, ...dataDessertJSON.meals ]
-         setMenus(dataMenuAll)
-      }
-      fetchData()
-      // cari cara kalo bisa fungsi fetch dibikin reusable
-   },[])
-
-   const foodMenus = menus.map((menu)=>{
-      return <DetailMenuCard key={menu.id} name={menu.strMeal} imgUrl={menu.strMealThumb}/>
-   })
-
-   const drinkMenus = drinks.map((drink)=>{
-      return <DetailMenuCard key={drink.idMeal} name={drink.strMeal} imgUrl={drink.strMealThumb}/>
-   })
-   
-   return(
-      <>
-         <hr/>
-         <div className='grid justify-items-center my-10'>
-            <h1>{filterName}</h1>
-            {
-               type === 'food' ? foodMenus : drinkMenus
-            }
-         </div>
-      </>
-   )
 }
 
-export default MenuCard
+export default DrinksData
