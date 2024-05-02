@@ -74,12 +74,21 @@ const MenuCard = (props)=>{
          const dataDessertJSON = await dataDessert.json()
 
          const dataMenuAll = [...dataBeefJSON.meals, ...dataSeafoodJSON.meals, ...dataDessertJSON.meals ]
-         setMenus(dataMenuAll)
+         
+         if(filterName==='Beef'){
+            setMenus(dataBeefJSON.meals)
+         }else if(filterName==='Seafood'){
+            setMenus(dataSeafoodJSON.meals)
+         }else if(filterName==='Dessert'){
+            setMenus(dataDessertJSON.meals)
+         }else{
+            setMenus(dataMenuAll)
+         }
       }
       fetchData()
       // cari cara kalo bisa fungsi fetch dibikin reusable
-   },[])
-
+   },[filterName])
+   
    const foodMenus = menus.map((menu)=>{
       return <DetailMenuCard key={menu.id} name={menu.strMeal} imgUrl={menu.strMealThumb}/>
    })
@@ -90,9 +99,7 @@ const MenuCard = (props)=>{
    
    return(
       <>
-         <hr/>
-         <div className='grid justify-items-center my-10'>
-            <h1>{filterName}</h1>
+         <div className='grid justify-items-center my-5'>
             {
                type === 'food' ? foodMenus : drinkMenus
             }

@@ -7,6 +7,10 @@ const Home = ()=>{
 
    let categories = [
       {
+         id: 0,
+         name: 'All Menus'
+      },
+      {
          id: 1,
          name: 'Beef'
       },
@@ -20,10 +24,10 @@ const Home = ()=>{
       },
    ]
 
-   const [dataFromChild, setDataFromChild] = useState('')
+   const [filterName, setFilterName] = useState('')
 
    const handleDataFromChild = (data)=>{
-      setDataFromChild(data)
+      setFilterName(data)
    }
 
 
@@ -34,7 +38,6 @@ const Home = ()=>{
             <aside className='grid justify-items-center col-span-5 md:col-span-2 content-around mb-1'>
                {/* top */}
                <div className='grid justify-items-center '>
-                  <h1>{dataFromChild}</h1>
 
                   <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXX_k5HjUIVfetTW6KQVMgDsXcAaT26W2dhw&usqp=CAU' className='rounded-full bg-transparent size-28'/>
                   <h1 className='text-8xl'>Basit&apos;s</h1>
@@ -60,14 +63,20 @@ const Home = ()=>{
             <div className='col-span-5 md:col-span-3 text-center size-full overflow-hidden mb-1'>
                <div className='grid grid-cols-2 justify-items-center mb-1 size-full'>
                   {/* food menu */}
-                  <div id='makanan' className='overflow-auto col-span-2 md:col-span-1 bg-stone-900 text-white size-full p-2'>
-                     <h4>Makanan</h4>
-                     <MenuCard type='food' filterName={dataFromChild}/>
+                  <div id='' className='overflow-hidden col-span-2 md:col-span-1 bg-stone-900 text-white size-full p-2'>
+                     <h4>Foods ({ filterName ? filterName : 'All Menus'})</h4>
+                     <hr/>
+                     <div id='makanan' className='overflow-auto col-span-2 md:col-span-1 bg-stone-900 text-white size-full p-1'>
+                        <MenuCard type='food' filterName={ filterName }/>
+                     </div>
                   </div>
                   {/* drink menu */}
-                  <div id='minuman' className='overflow-auto col-span-2 md:col-span-1 bg-orange-600 text-white size-full p-2'>
-                     <h4>Minuman</h4>
-                     <MenuCard type='drink'/>
+                  <div id='' className='overflow-hidden col-span-2 md:col-span-1 bg-orange-600 text-white size-full p-2'>
+                     <h4>Drinks</h4>
+                     <hr/>
+                     <div id='minuman' className='overflow-auto col-span-2 md:col-span-1 bg-orange-600 text-white size-full p-1'>
+                        <MenuCard type='drink'/>
+                     </div>
                   </div>
                </div>
             </div>
