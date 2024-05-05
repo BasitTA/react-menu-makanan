@@ -30,12 +30,12 @@ const Home = ()=>{
       setFilterName(data)
    }
 
-
    return(
       <div className='size-full bg-gradient-to-b from-orange-500 to-orange-700'>
          <div className='grid grid-cols-5 size-full my-0'>
+
             {/* left section */}
-            <aside className='grid justify-items-center col-span-5 md:col-span-2 content-around mb-1'>
+            <aside className='grid justify-items-center col-span-5 md:col-span-2 content-around my-5'>
                {/* top */}
                <div className='grid justify-items-center '>
 

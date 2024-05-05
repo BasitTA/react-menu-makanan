@@ -88,6 +88,7 @@ const MenuCard = (props)=>{
       fetchData()
       // cari cara kalo bisa fungsi fetch dibikin reusable
    },[filterName])
+
    
    const foodMenus = menus.map((menu)=>{
       return <DetailMenuCard key={menu.id} name={menu.strMeal} imgUrl={menu.strMealThumb}/>

@@ -9,5 +9,5 @@ Currently, two official plugins are available:
 
 
 # Addition
-
-I'm using Tailwind.css for styling this project
+-Tailwind
+-Material UI
