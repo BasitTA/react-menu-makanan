@@ -31,7 +31,7 @@ const Home = ()=>{
    }
 
    return(
-      <div className='size-full bg-gradient-to-b from-orange-500 to-orange-700'>
+      <div className='size-full bg-gradient-to-b from-orange-500 to-orange-700 '>
          <div className='grid grid-cols-5 size-full my-0'>
 
             {/* left section */}
@@ -39,14 +39,14 @@ const Home = ()=>{
                {/* top */}
                <div className='grid justify-items-center '>
 
-                  <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXX_k5HjUIVfetTW6KQVMgDsXcAaT26W2dhw&usqp=CAU' className='rounded-full bg-transparent size-28'/>
-                  <h1 className='text-8xl'>Basit&apos;s</h1>
-                  <h1 className='text-6xl text-white'>Restaurant</h1>
-                  <h5 className='justify-self-end text-white rounded-full bg-black px-4 mt-1'>Est.2024</h5>
+                  <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXX_k5HjUIVfetTW6KQVMgDsXcAaT26W2dhw&usqp=CAU' className='rounded-full size-28'/>
+                  <h1 className='font-medium text-5xl sm:text-6xl xl:text-7xl mt-1'>Basit&apos;s</h1>
+                  <h1 className='font-medium text-3xl sm:text-4xl xl:text-5xl text-white'>Restaurant</h1>
+                  <h5 className='text-xs md:text-base xl:text-xl justify-self-end text-white rounded-full bg-black px-4 my-2'>Est.2024</h5>
                </div>
                {/* center */}
-               <div className=''>
-                  <h3 className='text-center text-xl mb-2'>Pilih Kategori Makananmu</h3>
+               <div className='mt-5'>
+                  <h6 className='font-semibold md:text-lg text-center text-white italic antialiased pb-3'>Superfine Quality You Can Taste!</h6>
                   {
                      categories.map((category)=>{
                         return <FilterButton key={ category.id } filterName={ category.name } sendDataToParent={handleDataFromChild}/>
@@ -55,7 +55,7 @@ const Home = ()=>{
                </div>
                {/* bottom */}
                <div className='hidden justify-items-center md:grid'>
-                  <img src='https://img.pikbest.com/origin/09/25/12/87gpIkbEsTjwk.png!w700wp' className='size-72 align-bottom rounded-xl shadow-2xl'/>
+                  <img src='https://img.pikbest.com/origin/09/25/12/87gpIkbEsTjwk.png!w700wp' className='size-64 lg:size-72 align-bottom rounded-xl shadow-2xl'/>
                </div>
             </aside>
 
@@ -64,17 +64,17 @@ const Home = ()=>{
                <div className='grid grid-cols-2 justify-items-center mb-1 size-full'>
                   {/* food menu */}
                   <div id='' className='overflow-hidden col-span-2 md:col-span-1 bg-stone-900 text-white size-full p-2'>
-                     <h4>Foods ({ filterName ? filterName : 'All Menus'})</h4>
+                     <h4 className='font-medium mb-2 text-base md:text-lg'>Foods ({ filterName ? filterName : 'All Menus'})</h4>
                      <hr/>
-                     <div id='makanan' className='overflow-auto col-span-2 md:col-span-1 bg-stone-900 text-white size-full p-1'>
+                     <div id='makanan' className='text-sm md:text-base overflow-auto col-span-2 md:col-span-1 bg-stone-800 text-white size-full p-1 bg-contain bg-seafood'>
                         <MenuCard type='food' filterName={ filterName }/>
                      </div>
                   </div>
                   {/* drink menu */}
                   <div id='' className='overflow-hidden col-span-2 md:col-span-1 bg-orange-600 text-white size-full p-2'>
-                     <h4>Drinks</h4>
+                     <h4 className='font-medium mb-2 text-base md:text-lg'>Drinks</h4>
                      <hr/>
-                     <div id='minuman' className='overflow-auto col-span-2 md:col-span-1 bg-orange-600 text-white size-full p-1'>
+                     <div id='minuman' className='text-sm md:text-base overflow-auto col-span-2 md:col-span-1 bg-orange-500 text-white size-full p-1 bg-contain bg-drinks'>
                         <MenuCard type='drink'/>
                      </div>
                   </div>
