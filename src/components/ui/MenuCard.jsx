@@ -60,6 +60,7 @@ const MenuCard = (props)=>{
    ]
 
    const [menus, setMenus] = useState([])
+   const [detailMenus, setDetailMenus] = useState([])
 
 
    useEffect(()=>{
@@ -91,16 +92,16 @@ const MenuCard = (props)=>{
 
    
    const foodMenus = menus.map((menu)=>{
-      return <DetailMenuCard key={menu.id} name={menu.strMeal} imgUrl={menu.strMealThumb}/>
+      return <DetailMenuCard type='food' key={menu.id} name={menu.strMeal} imgUrl={menu.strMealThumb}/>
    })
 
    const drinkMenus = drinks.map((drink)=>{
-      return <DetailMenuCard key={drink.idMeal} name={drink.strMeal} imgUrl={drink.strMealThumb}/>
+      return <DetailMenuCard type='drink' key={drink.idMeal} name={drink.strMeal} imgUrl={drink.strMealThumb}/>
    })
    
    return(
       <>
-         <div className='grid justify-items-center my-5'>
+         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-1 justify-items-center my-5'>
             {
                type === 'food' ? foodMenus : drinkMenus
             }

@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 const FilterButton = (props)=>{
    const { filterName, sendDataToParent } = props
    let categoryImage = ''
@@ -15,7 +17,7 @@ const FilterButton = (props)=>{
 
    return(
       <>
-         <button onClick={ ()=>handleFilter(filterName) } className='rounded-full bg-orange-500 size-16 mx-1 shadow-md'>
+         <button onClick={ ()=>handleFilter(filterName) } className={`hover:bg-orange-300 transition duration-700 ease-in-out rounded-full bg-orange-500 size-16 mx-1 shadow-md`}>
             { categoryImage }
             <p className='-mt-4 text-white text-xs'>{ filterName ? filterName : 'menu' }</p>
          </button>
