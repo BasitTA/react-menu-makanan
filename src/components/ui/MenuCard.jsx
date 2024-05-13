@@ -57,7 +57,7 @@ const MenuCard = (props)=>{
    return(
       <>
          { 
-            foodMenus && drinkMenus ?
+            foodMenus && drinkMenus?
                <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-1 justify-items-center my-1'>
                   { type === 'food' ? foodMenus : drinkMenus }
                </div> :

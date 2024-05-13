@@ -19,7 +19,7 @@ const DetailMenuCard = (props)=>{
    const [menu, setMenu] = useState([])
    const [open, setOpen] = useState(false)
    const ingredientsCount = []
-   const nonHalalIngredients = ['pork','lard','bacon','beef']
+   const nonHalalIngredients = ['pork','lard','bacon','beef', 'wine']
    let ingredientsValue = [], filteredIngredient = []
 
    // declare custom ingredients index (20 items)
@@ -76,10 +76,10 @@ const DetailMenuCard = (props)=>{
    return(
       <>
          <button onClick={handleOpen} className={`my-2 hover:bg-stone-100 hover:text-stone-800 hover:font-semibold transition ease-in-out size-full p-2 rounded-xl inline-block align-middle`}>
-               <img key={key} src={imgUrl} className='mb-1 hover:size-32 transition ease-in-out shadow-black shadow-inner mx-auto size-16 rounded-md'/>
-               <h2>{name}</h2>
-               <p className={`${ type === 'food' ? 'bg-orange-600' : 'bg-slate-800'} rounded-md w-3/5 lg:w-36 m-auto text-xs lg:text-sm text-white`}>{price ? price : 'Rp. 30.000'}</p>
-               {/* <p>{desc ? desc : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, at.'}</p> */}
+            <img key={key} src={imgUrl} className='mb-1 hover:size-32 transition ease-in-out shadow-black shadow-inner mx-auto size-16 rounded-md'/>
+            <h2>{name}</h2>
+            <p className={`${ type === 'food' ? 'bg-orange-600' : 'bg-slate-800'} rounded-md w-3/5 lg:w-36 m-auto text-xs lg:text-sm text-white`}>{price ? price : 'Rp. 30.000'}</p>
+            {/* <p>{desc ? desc : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, at.'}</p> */}
          </button>
 
          <Modal
@@ -91,6 +91,7 @@ const DetailMenuCard = (props)=>{
             <Box sx={style} className='text-center bg-stone-100'>
                <img src={imgUrl} className='mb-2 shadow-black shadow-inner mx-auto max-h-80 rounded-md'/>
                <h3 className="mb-2 text-xl font-semibold">{ name }</h3>
+               <h4 className="mt-5 mb-2 text-base font-sm">Ingredients:</h4>
                { ingredient ? ingredient : '' }
             </Box>
          </Modal>
