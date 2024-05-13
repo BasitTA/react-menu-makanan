@@ -1,5 +1,4 @@
-const DrinksData = ()=>{
-   const drinks = [
+const drinksData = [
       {
          "idMeal": "1",
          "strMeal": "Mineral Water",
@@ -51,6 +50,5 @@ const DrinksData = ()=>{
          "strMealThumb": "https://images.pexels.com/photos/9228428/pexels-photo-9228428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
        }
    ]
-}
-
-export default DrinksData
+   
+export default drinksData

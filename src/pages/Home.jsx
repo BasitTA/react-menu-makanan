@@ -49,7 +49,7 @@ const Home = ()=>{
                   <h6 className='font-semibold md:text-lg text-center text-white italic antialiased pb-3'>Superfine Quality You Can Taste!</h6>
                   {
                      categories.map((category)=>{
-                        return <FilterButton key={ category.id } filterName={ category.name } sendDataToParent={handleDataFromChild}/>
+                        return <FilterButton key={ category.id } filterName={ category.name } callback={ handleDataFromChild }/>
                      })
                   }
                </div>
@@ -66,7 +66,7 @@ const Home = ()=>{
                   <div id='' className='overflow-hidden col-span-2 md:col-span-1 bg-stone-900 text-white size-full p-2'>
                      <h4 className='font-medium mb-2 text-base md:text-lg'>Foods ({ filterName ? filterName : 'All Menus'})</h4>
                      <hr/>
-                     <div id='makanan' className='text-sm md:text-base overflow-auto col-span-2 md:col-span-1 bg-stone-800 text-white size-full p-1 bg-contain bg-seafood'>
+                     <div id='makanan' className='grid justify-center text-sm md:text-base overflow-auto col-span-2 md:col-span-1 bg-stone-800 text-white size-full p-1 bg-contain bg-seafood'>
                         <MenuCard type='food' filterName={ filterName }/>
                      </div>
                   </div>
